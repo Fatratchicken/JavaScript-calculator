@@ -7,6 +7,7 @@ const Calculator = {
 
     /*primitive attributes*/
     currentOperation: '',
+    symbolLock: false,
 
 
     addition(num1, num2){
@@ -92,8 +93,10 @@ const Calculator = {
 
 }
 
-
+/*init functions*/
 Calculator.buildDigits();
+Calculator.clearExpression();
+
 
 Calculator.calculatorDigits.addEventListener('click', (event) => {
     const target = event.target;
@@ -105,7 +108,6 @@ Calculator.calculatorDigits.addEventListener('click', (event) => {
 })
 
 
-
 Calculator.calculatorOperations.addEventListener('click', (event) => {
     const target = event.target;
 
@@ -113,15 +115,21 @@ Calculator.calculatorOperations.addEventListener('click', (event) => {
         switch (target.id){
             case 'clear':
                 Calculator.clearExpression();
+                Calculator.symbolLock = false;
                 break;
             
             case 'equality':
                 Calculator.displayAnswer();
+                Calculator.symbolLock = false;
                 break;
 
             default:
-                Calculator.displayExpression(target.textContent);
-                Calculator.currentOperation = target.textContent;
+                if (document.querySelector('.input').textContent != '' && !Calculator.symbolLock){
+                    Calculator.displayExpression(target.textContent);
+                    Calculator.currentOperation = target.textContent;
+
+                    Calculator.symbolLock = true;
+                }
         }
     }
 });
