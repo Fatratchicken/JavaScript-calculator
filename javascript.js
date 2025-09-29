@@ -110,19 +110,18 @@ Calculator.calculatorOperations.addEventListener('click', (event) => {
     const target = event.target;
 
     if (event.target.className.includes('operation-button')){
-        if (target.id == 'clear'){
-            Calculator.clearExpression()
-        }
+        switch (target.id){
+            case 'clear':
+                Calculator.clearExpression();
+                break;
+            
+            case 'equality':
+                Calculator.displayAnswer();
+                break;
 
-        if (target.id == 'equality'){
-            Calculator.displayAnswer();
-        }
-
-        else if (!Calculator.lockOperation){
-            Calculator.displayExpression(target.textContent);
-            Calculator.currentOperation = target.textContent;
-
+            default:
+                Calculator.displayExpression(target.textContent);
+                Calculator.currentOperation = target.textContent;
         }
     }
-
 });
