@@ -3,6 +3,8 @@ body{
     justify-content: center;
 
     font-family: Arial, Helvetica, sans-serif;
+
+    box-sizing:border-box;
 }
 
 .calculator-background{
@@ -28,6 +30,8 @@ body{
     border-radius: 10px;
 
     margin-top: 30px;
+
+    text-align: center;
 }
 
 .three-digit-container{
@@ -39,10 +43,10 @@ body{
 .num-div{
     font-size: 60px;
     background-color: white;
-    padding: 10px;
+    padding: 20px;
 
     border-radius: 10px;
-    margin: 10px;
+    margin: 5px;
 }
 
 .button-container{
@@ -50,6 +54,7 @@ body{
     width: 80%;
 
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .operation-button{
@@ -57,8 +62,16 @@ body{
     text-align: center;
 
     border-radius: 10px;
-    padding: 10px;
+    padding: 0.01em;
     background-color: white;
 
     margin: 10px;
+}
+
+.num-div:hover{
+    background-color: grey;
+}
+
+.operation-button:hover{
+    background-color: grey;
 }
