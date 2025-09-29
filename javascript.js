@@ -7,7 +7,7 @@ const Calculator = {
 
     /*primitive attributes*/
     currentOperation: '',
-    /*lockOperation: true,*/
+
 
     addition(num1, num2){
         return num1 + num2;
@@ -92,30 +92,37 @@ const Calculator = {
 
 }
 
+
 Calculator.buildDigits();
-
-
 
 Calculator.calculatorDigits.addEventListener('click', (event) => {
     const target = event.target;
 
-    Calculator.displayExpression(target.textContent);
-});
+    if (event.target.className.includes('num-div')){
+        Calculator.displayExpression(target.textContent);
+    }
+
+})
+
+
 
 Calculator.calculatorOperations.addEventListener('click', (event) => {
     const target = event.target;
 
-    if (target.id == 'clear'){
-        Calculator.clearExpression()
+    if (event.target.className.includes('operation-button')){
+        if (target.id == 'clear'){
+            Calculator.clearExpression()
+        }
+
+        if (target.id == 'equality'){
+            Calculator.displayAnswer();
+        }
+
+        else if (!Calculator.lockOperation){
+            Calculator.displayExpression(target.textContent);
+            Calculator.currentOperation = target.textContent;
+
+        }
     }
 
-    if (target.id == 'equality'){
-        Calculator.displayAnswer();
-    }
-
-    else if (!Calculator.lockOperation){
-        Calculator.displayExpression(target.textContent);
-        Calculator.currentOperation = target.textContent;
-
-    }
 });
