@@ -44,7 +44,18 @@ const Calculator = {
 
             threeDigitContainer.appendChild(newNum);
 
+            /*decimal point*/
+            if (i == 9){
+                const decimalPoint = document.createElement('div');
+                decimalPoint.classList.add('decimal');
+                decimalPoint.textContent = '.';
+
+                threeDigitContainer.appendChild(decimalPoint);
+            }
         } 
+
+
+
     },
 
     formulateExpression(){
@@ -101,7 +112,7 @@ Calculator.clearExpression();
 Calculator.calculatorDigits.addEventListener('click', (event) => {
     const target = event.target;
 
-    if (event.target.className.includes('num-div')){
+    if (event.target.className.includes('num-div') || event.target.className.includes('decimal')){
         Calculator.displayExpression(target.textContent);
     }
 

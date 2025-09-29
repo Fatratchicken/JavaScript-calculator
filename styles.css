@@ -37,10 +37,10 @@ body{
 .three-digit-container{
     display: flex;
     gap: 10px;
-    justify-content: center;
+
 }
 
-.num-div{
+.num-div, .decimal{
     font-size: 4em;
     background-color: white;
     padding: 20px;
@@ -48,6 +48,11 @@ body{
     border-radius: 10px;
     margin: 5px;
 }
+
+.decimal{
+    width: 100%;
+}
+
 
 .button-container{
     display: flex;
@@ -68,7 +73,7 @@ body{
     margin: 10px;
 }
 
-.num-div:hover{
+.num-div:hover, .decimal:hover{
     background-color: grey;
 }
 
