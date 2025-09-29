@@ -1,6 +1,12 @@
+*{
+    
+}
+
 body{
     display: flex;
     justify-content: center;
+
+    background-color: black;
 
     font-family: Arial, Helvetica, sans-serif;
 
@@ -12,26 +18,27 @@ body{
     flex-direction: column;
     align-items: center;
 
-    width: 30%;
-    aspect-ratio: 1/1;
     margin: 30px;
 
-    background-color: black;
+    background-color: white;
 
     border-radius: 10px;
 
 }
 
 .input{
-    background-color: white;
+    color: white;
+    background-color: black;
 
-    width: 80%;
-    height: 10%;
+    width: 300px;
+    height: 50px;
     border-radius: 10px;
 
     margin-top: 30px;
 
     text-align: center;
+
+    box-shadow: 2px 2px 5px grey;
 }
 
 .three-digit-container{
@@ -41,12 +48,15 @@ body{
 }
 
 .num-div, .decimal{
+    color: white;
     font-size: 4em;
-    background-color: white;
+    background-color: black;
     padding: 20px;
 
     border-radius: 10px;
     margin: 5px;
+
+    box-shadow: 2px 2px 5px grey;
 }
 
 .decimal{
@@ -56,21 +66,24 @@ body{
 
 .button-container{
     display: flex;
-    width: 80%;
 
     justify-content: space-between;
-    margin-top: 20px;
+    align-items: center;
+    margin: 20px;
 }
 
 .operation-button{
+    color: white;
     font-size: 4em;
     text-align: center;
 
     border-radius: 10px;
-    padding: 0.01em;
-    background-color: white;
+    background-color: black;
 
     margin: 10px;
+
+    box-shadow: 2px 2px 5px grey;
+
 }
 
 .num-div:hover, .decimal:hover{
